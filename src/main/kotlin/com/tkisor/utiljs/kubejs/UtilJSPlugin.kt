@@ -25,6 +25,5 @@ class UtilJSPlugin : KubeJSPlugin {
         bindings.add("Short", java.lang.Short::class.java)
         bindings.add("Byte", java.lang.Byte::class.java)
 
-
     }
 }
