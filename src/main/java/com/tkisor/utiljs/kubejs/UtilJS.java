@@ -1,14 +1,13 @@
 package com.tkisor.utiljs.kubejs;
 
 import com.google.gson.Gson;
-import com.tkisor.utiljs.Result;
-import net.minecraft.Util;
-
-import java.util.concurrent.ExecutorService;
 
 public class UtilJS {
-    public static KotlinJSWrapper kotlin = new KotlinJSWrapper();
-    public static AsyncJSWrapper async = new AsyncJSWrapper();
+    public static Assert asserts = new Assert();
+    public static Async async = new Async();
+    public static Control control = new Control();
+    public static Scope scope = new Scope();
+    public static Debug debug = new Debug();
 
     public static <T> T deepCopy(T object) {
         if (object == null) return null;
@@ -28,15 +27,4 @@ public class UtilJS {
         return gson.fromJson(json, clazz);
     }
 
-    public static ExecutorService ioPool() {
-        return Util.ioPool();
-    }
-
-    public static <T> Result<T> successResult(T value) {
-        return Result.success(value);
-    }
-
-    public static <T> Result<T> failureResult(Throwable error) {
-        return Result.failure(error);
-    }
 }

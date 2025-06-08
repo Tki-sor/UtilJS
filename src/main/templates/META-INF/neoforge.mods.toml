@@ -1,13 +1,14 @@
-modLoader = "kotlinforforge"
+modLoader = "javafml"
 loaderVersion = "${loader_version_range}"
 license = "${mod_license}"
-issueTrackerURL="https://change.me.to.your.issue.tracker.example.invalid/"
+issueTrackerURL="https://github.com/Tki-sor/UtilJS/issues"
 [[mods]]
 modId = "${mod_id}"
 version = "${mod_version}"
 displayName = "${mod_name}"
 updateJSONURL="" #https://docs.neoforged.net/docs/misc/updatechecker/
-displayURL="https://change.me.to.your.mods.homepage.example.invalid/"
+modUrl="https://www.curseforge.com/minecraft/mc-mods/utiljs"
+displayURL="https://www.curseforge.com/minecraft/mc-mods/utiljs"
 authors = "${mod_authors}"
 description = '''${mod_description}'''
 
@@ -31,3 +32,16 @@ versionRange = "${minecraft_version_range}"
 ordering = "NONE"
 side = "BOTH"
 
+[[dependencies."${mod_id}"]]
+modId = "rhino"
+type = "required"
+versionRange = "[${rhino_version},)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies."${mod_id}"]]
+modId = "kubejs"
+type = "required"
+versionRange = "[${kubejs_version},)"
+ordering = "AFTER"
+side = "BOTH"

@@ -6,8 +6,17 @@
   "refmap": "utiljs.refmap.json",
   "mixins": [
     "MixinBlock",
+    "MixinBlockPos",
+    "MixinBlockState",
+    "MixinCollectionTag",
+    "MixinCompoundTag",
     "MixinEntity",
-    "MixinItemStack"
+    "MixinItem",
+    "MixinItemStack",
+    "MixinLevel",
+    "MixinMinecraftServer",
+    "MixinMutableComponent",
+    "kubejs.MixinBlockContainerJS"
   ],
   "client": [
   ],

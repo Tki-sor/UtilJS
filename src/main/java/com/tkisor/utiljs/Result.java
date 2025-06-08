@@ -26,10 +26,6 @@ public class Result<T> {
     }
 
     public T getValue() {
-        return value;
-    }
-
-    public T getOrNull() {
         return isFailure() ? null : value;
     }
 
