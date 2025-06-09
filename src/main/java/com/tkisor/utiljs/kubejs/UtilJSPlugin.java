@@ -1,19 +1,19 @@
 package com.tkisor.utiljs.kubejs;
 
+import com.iafenvoy.server.i18n.ServerI18n;
 import dev.latvian.mods.kubejs.event.EventGroupRegistry;
 import dev.latvian.mods.kubejs.plugin.KubeJSPlugin;
 import dev.latvian.mods.kubejs.script.BindingRegistry;
+import net.neoforged.fml.ModList;
 
 public class UtilJSPlugin implements KubeJSPlugin {
 
     @Override
     public void registerEvents(EventGroupRegistry registry) {
-        // 可以根据需要注册事件
     }
 
     @Override
     public void afterInit() {
-        // 初始化完成后调用
     }
 
     @Override
@@ -29,5 +29,9 @@ public class UtilJSPlugin implements KubeJSPlugin {
         bindings.add("Long", Long.class);
         bindings.add("Short", Short.class);
         bindings.add("Byte", Byte.class);
+
+        if (ModList.get().isLoaded("server_i18n_api")) {
+            bindings.add("ServerI18n", ServerI18n.class);
+        }
     }
 }

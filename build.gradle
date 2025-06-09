@@ -28,6 +28,10 @@ repositories {
             includeGroup "dev.latvian.apps"
         }
     }
+
+    maven {
+        url "https://cursemaven.com"
+    }
 }
 
 base {
@@ -87,7 +91,11 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
     implementation "dev.latvian.mods:rhino:${rhino_version}"
-    implementation "dev.latvian.mods:kubejs-neoforge:${kubejs_version}"
+    implementation("dev.latvian.mods:kubejs-neoforge:${kubejs_version}") {
+        exclude group: 'com.github.rtyley', module: 'animated-gif-lib-for-java'
+    }
+
+    implementation "curse.maven:server-i18n-api-1278793:6620861"
 }
 
 var generateModMetadata = tasks.register("generateModMetadata", ProcessResources) {

@@ -1,5 +1,7 @@
 package com.tkisor.utiljs;
 
+import java.util.function.Function;
+
 public class Result<T> {
     private final T value;
     private final Throwable error;
@@ -31,5 +33,13 @@ public class Result<T> {
 
     public Throwable getError() {
         return error;
+    }
+
+    public <R> R fold(Function<? super T, ? extends R> onSuccess, Function<? super Throwable, ? extends R> onFailure) {
+        if (isSuccess()) {
+            return onSuccess.apply(value);
+        } else {
+            return onFailure.apply(error);
+        }
     }
 }
