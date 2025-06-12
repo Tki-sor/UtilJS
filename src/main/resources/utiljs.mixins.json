@@ -17,9 +17,14 @@
     "MixinMinecraftServer",
     "MixinMutableComponent",
     "kubejs.MixinBlockBrokenKubeEvent",
-    "kubejs.MixinBlockContainerJS"
+    "kubejs.MixinBlockContainerJS",
+    "kubejs.MixinKubeRecipe",
+    "kubejs.MixinRecipeTypeFunction",
+    "kubejs.MixinShapedKubeJSRecipe",
+    "kubejs.MixinShapelessKubeJSRecipe"
   ],
   "client": [
+    "MixinMinecraft"
   ],
   "injectors": {
     "defaultRequire": 1

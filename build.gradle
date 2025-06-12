@@ -96,6 +96,15 @@ dependencies {
     }
 
     implementation "curse.maven:server-i18n-api-1278793:6620861"
+
+//    implementation(jarJar('com.github.oshi:oshi-core:6.8.2'))
+    testImplementation 'com.github.oshi:oshi-core:6.4.2'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.11.1'
+}
+
+test {
+    useJUnitPlatform()
 }
 
 var generateModMetadata = tasks.register("generateModMetadata", ProcessResources) {
