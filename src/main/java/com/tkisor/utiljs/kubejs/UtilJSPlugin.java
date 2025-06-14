@@ -1,9 +1,11 @@
 package com.tkisor.utiljs.kubejs;
 
 import com.iafenvoy.server.i18n.ServerI18n;
+import com.sun.jna.StringArray;
 import dev.latvian.mods.kubejs.event.EventGroupRegistry;
 import dev.latvian.mods.kubejs.plugin.KubeJSPlugin;
 import dev.latvian.mods.kubejs.script.BindingRegistry;
+import it.unimi.dsi.fastutil.booleans.BooleanArrayList;
 import it.unimi.dsi.fastutil.doubles.DoubleArrayList;
 import it.unimi.dsi.fastutil.floats.FloatArrayList;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
@@ -51,6 +53,7 @@ public class UtilJSPlugin implements KubeJSPlugin {
         bindings.add("DoubleArrayList", DoubleArrayList.class);
         bindings.add("FloatArrayList", FloatArrayList.class);
         bindings.add("ObjectArrayList", ObjectArrayList.class);
+        bindings.add("BooleanArrayList", BooleanArrayList.class);
 
         bindings.add("DyeColor", DyeColor.class);
         
