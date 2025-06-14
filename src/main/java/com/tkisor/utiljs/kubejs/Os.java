@@ -7,7 +7,6 @@ import oshi.hardware.GlobalMemory;
 import oshi.software.os.OperatingSystem;
 
 import java.lang.management.ManagementFactory;
-import java.net.InetAddress;
 import java.util.*;
 
 @Info("Provides system OS and hardware information utilities")
@@ -103,14 +102,14 @@ public class Os {
         return MEMORY.getAvailable();
     }
 
-    @Info("Host name")
-    public String hostname() {
-        try {
-            return InetAddress.getLocalHost().getHostName();
-        } catch (Exception e) {
-            return "unknown";
-        }
-    }
+//    @Info("Host name")
+//    public String hostname() {
+//        try {
+//            return InetAddress.getLocalHost().getHostName();
+//        } catch (Exception e) {
+//            return "unknown";
+//        }
+//    }
 
     @Info("OS version")
     public String version() {

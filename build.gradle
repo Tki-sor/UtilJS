@@ -97,6 +97,7 @@ dependencies {
 
     implementation "curse.maven:server-i18n-api-1278793:6620861"
 
+    implementation(jarJar("one.util:streamex:0.8.3"))
 //    implementation(jarJar('com.github.oshi:oshi-core:6.8.2'))
     testImplementation 'com.github.oshi:oshi-core:6.4.2'
 

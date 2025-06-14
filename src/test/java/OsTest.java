@@ -19,7 +19,7 @@ public class OsTest {
         System.out.println("System Uptime: " + os.systemUptime() + " seconds");
         System.out.println("System Free Memory: " + os.systemFreeMem() + " bytes");
         System.out.println("System Total Memory: " + os.systemTotalMem() + " bytes");
-        System.out.println("Hostname: " + os.hostname());
+//        System.out.println("Hostname: " + os.hostname());
         System.out.println("OS Version: " + os.version());
         System.out.println("OS Type: " + os.type());
         System.out.println("OS Release: " + os.release());
