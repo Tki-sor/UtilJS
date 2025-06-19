@@ -2,6 +2,7 @@ package com.tkisor.utiljs.kubejs;
 
 import com.iafenvoy.server.i18n.ServerI18n;
 import com.sun.jna.StringArray;
+import com.tkisor.utiljs.wrapper.java.*;
 import dev.latvian.mods.kubejs.event.EventGroupRegistry;
 import dev.latvian.mods.kubejs.plugin.KubeJSPlugin;
 import dev.latvian.mods.kubejs.script.BindingRegistry;
@@ -11,6 +12,7 @@ import it.unimi.dsi.fastutil.floats.FloatArrayList;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.longs.LongArrayList;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.DyeColor;
 import net.neoforged.fml.ModList;
 import one.util.streamex.DoubleStreamEx;
@@ -41,7 +43,13 @@ public class UtilJSPlugin implements KubeJSPlugin {
         bindings.add("Long", Long.class);
         bindings.add("Short", Short.class);
         bindings.add("Byte", Byte.class);
-        bindings.add("String", String.class);
+        bindings.add("IntegerW", IntegerW.class);
+        bindings.add("BooleanW", BooleanW.class);
+        bindings.add("DoubleW", DoubleW.class);
+        bindings.add("FloatW", FloatW.class);
+        bindings.add("LongW", LongW.class);
+        bindings.add("ShortW", ShortW.class);
+        bindings.add("ByteW", ByteW.class);
 
         bindings.add("Stream", StreamEx.class);
         bindings.add("IntStream", IntStreamEx.class);
@@ -56,6 +64,7 @@ public class UtilJSPlugin implements KubeJSPlugin {
         bindings.add("BooleanArrayList", BooleanArrayList.class);
 
         bindings.add("DyeColor", DyeColor.class);
+        bindings.add("DataComponents", DataComponents.class);
         
         if (ModList.get().isLoaded("server_i18n_api")) {
             bindings.add("ServerI18n", ServerI18n.class);

@@ -16,6 +16,7 @@
     "MixinLevel",
     "MixinMinecraftServer",
     "MixinMutableComponent",
+    "MixinPatchedDataComponentMap",
     "kubejs.MixinBlockBrokenKubeEvent",
     "kubejs.MixinBlockContainerJS",
     "kubejs.MixinKubeRecipe",

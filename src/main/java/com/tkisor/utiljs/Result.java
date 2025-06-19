@@ -1,6 +1,10 @@
 package com.tkisor.utiljs;
 
+import it.unimi.dsi.fastutil.ints.IntArrayList;
+
+import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.Predicate;
 
 public class Result<T> {
     private final T value;
@@ -40,6 +44,57 @@ public class Result<T> {
             return onSuccess.apply(value);
         } else {
             return onFailure.apply(error);
+        }
+    }
+
+    public Result<T> onSuccess(Consumer<? super T> action) {
+        if (isSuccess()) {
+            action.accept(value);
+        }
+        return this;
+    }
+
+    public Result<T> onFailure(Consumer<Throwable> action) {
+        if (isFailure()) {
+            action.accept(error);
+        }
+        return this;
+    }
+
+    public <U> Result<U> map(Function<? super T, ? extends U> mapper) {
+        if (isSuccess()) {
+            try {
+                return success(mapper.apply(value));
+            } catch (Throwable e) {
+                return failure(e);
+            }
+        } else {
+            return failure(error);
+        }
+    }
+
+    public <U> Result<U> flatMap(Function<? super T, Result<U>> mapper) {
+        if (isSuccess()) {
+            try {
+                return mapper.apply(value);
+            } catch (Throwable e) {
+                return failure(e);
+            }
+        } else {
+            return failure(error);
+        }
+    }
+
+    public Result<T> filter(Predicate<? super T> predicate) {
+        if (isFailure()) return this;
+        try {
+            if (predicate.test(value)) {
+                return this;
+            } else {
+                return failure(new IllegalStateException("Value does not satisfy the filter condition"));
+            }
+        } catch (Throwable e) {
+            return failure(e);
         }
     }
 }

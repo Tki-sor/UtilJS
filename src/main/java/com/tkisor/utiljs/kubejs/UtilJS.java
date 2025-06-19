@@ -30,5 +30,4 @@ public class UtilJS {
         String json = gson.toJson(object);
         return gson.fromJson(json, clazz);
     }
-
 }

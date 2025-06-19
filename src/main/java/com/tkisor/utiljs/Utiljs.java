@@ -12,6 +12,5 @@ public class Utiljs {
     public static final Logger LOGGER = LogManager.getLogger(ID);
 
     public Utiljs(IEventBus modEventBus, ModContainer modContainer) {
-
     }
 }
